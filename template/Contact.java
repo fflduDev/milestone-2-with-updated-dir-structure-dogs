@@ -12,9 +12,10 @@ package template;
 
 class Contact {
     private String name;
-
+//crate a list of PhonebookEntries...
     public Contact(String name) {
         this.name = name;
+        //initialize list
     }
 
     public void addPhoneBookEntry(String number, String type) {
