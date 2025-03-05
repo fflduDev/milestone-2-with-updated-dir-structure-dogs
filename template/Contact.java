@@ -19,6 +19,8 @@ class Contact {
     }
 
     public void addPhoneBookEntry(String number, String type) {
+        //create a pbEntry with the incoming num/type
+        //add that pbEntry to your list of pbEntries
 
     }
 
