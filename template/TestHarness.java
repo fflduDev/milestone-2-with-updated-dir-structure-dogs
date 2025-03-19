@@ -15,7 +15,6 @@ public class TestHarness {
 
 	public static void main(String[] args) throws InterruptedException {
 		init();
-		//test
 		//TODO: 2 cases:
 		//display non equality using your overriden equals method
 		//display equality using your overriden equals method
@@ -31,8 +30,9 @@ public class TestHarness {
 		TEST_hashcode(p2, p3);
 
 		//Create the phonebook handler
+		System.out.println("Creating handler");
 		phonebookHander = new PhonebookHandler(phonebook);
-		
+
 		//TODO
 		//call 
 		List<Contact> sortedContacts = TEST_Sort(phonebookHander);
@@ -42,6 +42,7 @@ public class TestHarness {
 		// 2 cases:
 		// 1) a call to search finds the user and displays their entries 
 		//(2) a call to search does not find the user & displays some detail illustrating same
+
 		TEST_Search(phonebookHander, sortedContacts, "Juan");
 		 
 
@@ -51,7 +52,7 @@ public class TestHarness {
 	public static List<Contact> TEST_Sort(PhonebookHandler phonebookHandler) {
 		//TODO: call your phonebookHander & have it sort the contacts.  Return those.
 		
-		List<Contact> sortedContacts = phonebookHander.sortByName();
+		List<Contact> sortedContacts = phonebookHandler.sortByName();
 		return sortedContacts;
 	}
 
@@ -61,7 +62,7 @@ public class TestHarness {
 	  
 		
 		System.out.println("\n -- Search results for " + name + " -- ");
-		List<PhonebookEntry> selectedEntries = phonebookHander.binarySearch(sortedContacts, name);
+		List<PhonebookEntry> selectedEntries = phonebookHandler.binarySearch(sortedContacts, name);
 		for (PhonebookEntry entry : selectedEntries) {
 			
 			System.out.println("Entries for " + name + " " +  entry.getType() + " " + entry.getPhoneNumber());
@@ -69,6 +70,7 @@ public class TestHarness {
 	}
 	
 	public static void TEST_Display(List<Contact> sortedContacts) {
+
 		phonebookHander.display(sortedContacts);
 	}
 

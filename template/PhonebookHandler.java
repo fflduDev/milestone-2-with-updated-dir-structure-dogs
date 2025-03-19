@@ -16,7 +16,8 @@ public class PhonebookHandler implements iPhonebookHander{
 	private Map<Contact, List<PhonebookEntry>> phonebook;
 	//constructor may be wrong, just fixed the errors
 	public PhonebookHandler(Map<Contact, List<PhonebookEntry>> phonebook) {
-		this.phonebook = new HashMap<>();
+
+		this.phonebook = phonebook;
 	}
 
 
@@ -26,9 +27,9 @@ public class PhonebookHandler implements iPhonebookHander{
 		List<Contact> contacts = new ArrayList<>(phonebook.keySet());
 
 		for (int i = 0; i < contacts.size() - 1; i++) {
-			for (int j = i + 1; j < contacts.size() - 1 - i; j++) {
+			for (int j = 0; j < contacts.size() - 1 - i; j++) {
 				if (contacts.get(j).getName().compareTo(contacts.get(j+1).getName()) > 0) {
-					Contact temp = contacts.get(i);
+					Contact temp = contacts.get(j);
 					contacts.set(j, contacts.get(j+1));
 					contacts.set(j+1, temp);
 				}
@@ -61,7 +62,7 @@ public class PhonebookHandler implements iPhonebookHander{
 		}
 
 		if (resultContact == null) {
-			return null;
+			return new ArrayList<>();
 		}
 		else {
 			return resultContact.getPhonebookEntries();
