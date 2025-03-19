@@ -27,7 +27,7 @@ public class PhonebookHandler implements iPhonebookHander{
 
 		for (int i = 0; i < contacts.size() - 1; i++) {
 			for (int j = i + 1; j < contacts.size() - 1 - i; j++) {
-				if (contacts.get(j).getName().compareTo(contacts.get(j+1)) > 0) {
+				if (contacts.get(j).getName().compareTo(contacts.get(j+1).getName()) > 0) {
 					Contact temp = contacts.get(i);
 					contacts.set(j, contacts.get(j+1));
 					contacts.set(j+1, temp);
@@ -64,7 +64,7 @@ public class PhonebookHandler implements iPhonebookHander{
 			return null;
 		}
 		else {
-			return resultContact.getPhonebookEntry();
+			return resultContact.getPhonebookEntries();
 		}
 	}
 
