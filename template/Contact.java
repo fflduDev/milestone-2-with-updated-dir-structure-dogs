@@ -45,7 +45,13 @@ class Contact {
     // Overrides hashCode to demonstrate intentional collisions in some cases.
     @Override
     public int hashCode() {
-        return name.length() % 2; // Causes intentional collisions for names with the same length parity.
+        if(name.length() % 2==0){
+            return 1;
+        }
+        else{        // Causes intentional collisions for names with the same length parity.
+            return 0;
+        }
+        // Causes intentional collisions for names with the same length parity.
     }
 
     // Returns the list of phonebook entries for this contact.

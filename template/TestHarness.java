@@ -30,7 +30,7 @@ public class TestHarness {
 		TEST_hashcode(p2, p3);
 
 		//Create the phonebook handler
-		System.out.println("Creating handler");
+		System.out.println("Creating handler .... \n");
 		phonebookHander = new PhonebookHandler(phonebook);
 
 		//TODO

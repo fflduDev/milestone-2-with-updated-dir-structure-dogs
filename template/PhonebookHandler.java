@@ -72,14 +72,10 @@ public class PhonebookHandler implements iPhonebookHander{
 	@Override
 	public void display(List<Contact> sortedContacts) {
 		// TODO Auto-generated method stub
-		System.out.println("[");
+		System.out.println("Sorted Phonebook (Bubble Sort): ");
 		for (int i = 0; i < sortedContacts.size(); i++) {
-			System.out.println(sortedContacts.get(i));
-			if (i != sortedContacts.size() - 1) {
-				System.out.print(", ");
-			}
+			System.out.println(sortedContacts.get(i).getName());
 		}
-		System.out.println("]");
 	}
 
  
